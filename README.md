@@ -10,3 +10,4 @@ To-do
 - Add an option to remove a background in a png
 - optimize code 
 - new GUI 
+- link website to button
