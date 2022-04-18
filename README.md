@@ -2,7 +2,7 @@
 
 * Converts png to jpg
 * Converts jpg to png
-* Converts jpg/png to Pdf
+* Converts jpg/png to pdf
 
 Open the exe and select: jpg to png/png to jpg/jpg to pdf
 
