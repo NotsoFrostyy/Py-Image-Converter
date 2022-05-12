@@ -3,6 +3,7 @@
 * Converts png to jpg
 * Converts jpg to png
 * Converts jpg/png to pdf
+* Converts jpg/png to ico
 
 Open the exe and select: jpg to png/png to jpg/jpg to pdf
 
@@ -11,4 +12,5 @@ To-do
 - optimize code ✔
 - new GUI ✔
 - link website to button ✔
-- turn jpg/png to ico 🔳
+- turn jpg/png to ico ✔
+- preview image 🔳
