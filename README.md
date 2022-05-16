@@ -16,6 +16,5 @@ To-do
 - preview image 🔳
 
 
-Preview:
 ![image converter](https://user-images.githubusercontent.com/99787566/168696891-13e28394-1360-478b-bd52-530332d049ee.PNG)
 
