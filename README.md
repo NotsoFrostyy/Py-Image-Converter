@@ -14,7 +14,10 @@ To-do
 - link website to button ✔
 - turn jpg/png to ico ✔
 - preview image 🔳
+- Web based version 🔳
 
+Look at wiki for more detail on how to run:
+https://github.com/NotsoFrostyy/Image-Converter.wiki.git
 
 ![image converter](https://user-images.githubusercontent.com/99787566/168696891-13e28394-1360-478b-bd52-530332d049ee.PNG)
 
