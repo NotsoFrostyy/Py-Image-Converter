@@ -31,7 +31,6 @@ def openweb():
 
 # start of jpg to png
 
-
 def jpg_to_png():
     global im1
 
@@ -48,11 +47,29 @@ def jpg_to_png():
     else:
        # error
         messagebox.showerror("Error", "Input all Data")
-
 # end of jpg to png
 
-# start of png to jpg
+# start of jfif to png
 
+def jfif_to_png():
+    global im1
+
+    import_filename = fd.askopenfilename(filetypes=[("JFIF File", '.jfif')])
+    if import_filename.endswith(".jfif"):
+
+        im1 = Image.open(import_filename)
+
+        # where to save
+        export_filename = fd.asksaveasfilename(defaultextension=".png")
+        im1.save(export_filename)
+
+        messagebox.showinfo("success ", "your Image converted to Png")
+    else:
+       # error
+        messagebox.showerror("Error", "Input all Data")
+# end of jfif to png
+
+# start of png to jpg
 
 def png_to_jpg():
     global im1
@@ -74,7 +91,6 @@ def png_to_jpg():
 
 # start of jpg to pdf
 
-
 def Jpg_to_Pdf():
     global im1
     import_filename = fd.askopenfilename(filetypes=[("JPG File", '.jpg')])
@@ -90,6 +106,7 @@ def Jpg_to_Pdf():
         messagebox.showerror("Error", "Input all Data")
 # end of jpg to pdf
 
+# start of png to pdf
 
 def png_to_pdf():
     global im1
@@ -104,8 +121,10 @@ def png_to_pdf():
         messagebox.showinfo("success ", "your Image converted to pdf ")
     else:
         messagebox.showerror("Error", "Input all Data")
+# end of png to pdf
 
-
+#start of png to ico
+        
 def png_to_ico():
     global im1
     import_filename = fd.askopenfilename(filetypes=[("PNG File", '.png')])
@@ -118,7 +137,9 @@ def png_to_ico():
         messagebox.showinfo("success ", "your Image converted to ico ")
     else:
         messagebox.showerror("Error", "Input all Data")
+#end of png to ico
 
+#start of jpg to ico
 
 def jpg_to_ico():
     global im1
@@ -132,6 +153,7 @@ def jpg_to_ico():
         messagebox.showinfo("success ", "your Image converted to ico ")
     else:
         messagebox.showerror("Error", "Input all Data")
+#end of jgg to ico
 
 
 # start of buttons
