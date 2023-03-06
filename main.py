@@ -188,6 +188,11 @@ button7 = Button(root, text="Png -> Ico", width=9, height=1, bg="purple",
 
 button7.place(x=160, y=120)
 
+button8 = Button(root, text="Jfif -> Png", width=9, height=1, bg="purple",
+                 fg="white", font=("helvetica", 12, "bold"), command=jfif_to_png, relief=GROOVE)
+
+button8.place(x=160, y=160)
+
 # end of button
 
 # website button and placement and geometry of window
