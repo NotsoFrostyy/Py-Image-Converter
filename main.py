@@ -9,7 +9,7 @@ import webbrowser
 root = Tk()
 
 # Application Information
-root.title("Image Converter 1.8")  # name of window
+root.title("Image Converter (Test Builds)")  # name of window
 root.resizable(False, False)  # Cant resize window
 
 frame1 = Frame(heigh=250, width=300, bg='teal')  # bg1
