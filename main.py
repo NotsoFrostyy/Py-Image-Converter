@@ -94,6 +94,27 @@ def jfif_to_png():
         messagebox.showerror("Error", "Input all Data")
 # end of jfif to png
 
+# start of png to jfif
+
+def png_to_jfif():
+    global im1
+
+    import_filename = fd.askopenfilename(filetypes=[("PNG File", '.png')])
+    if import_filename.endswith(".png"):
+
+        im1 = Image.open(import_filename)
+
+        # where to save
+        export_filename = fd.asksaveasfilename(defaultextension=".jpg")
+        im1.save(export_filename)
+        im1 = im1.convert('RGBA')
+
+        messagebox.showinfo("success ", "your Image converted to Jpg")
+    else:
+        # error
+        messagebox.showerror("Error", "Input all Data")
+# end of png to jfif
+
 # start of png to jpg
 
 def png_to_jpg():
@@ -216,7 +237,12 @@ button7.place(x=160, y=120)
 button8 = Button(root, text="Jfif -> Png", width=9, height=1, bg="purple",
                  fg="white", font=("helvetica", 12, "bold"), command=jfif_to_png, relief=GROOVE)
 
-button8.place(x=160, y=160)
+button8.place(x=50, y=160)
+
+button9 = Button(root, text="Png -> Jfif", width=9, height=1, bg="purple",
+                 fg="white", font=("helvetica", 12, "bold"), command=png_to_jfif, relief=GROOVE)
+
+button9.place(x=160, y=160)
 
 # end of button
 
