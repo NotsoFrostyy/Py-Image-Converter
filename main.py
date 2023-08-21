@@ -1,3 +1,27 @@
+#****************************************************************************#
+# This file is part of Py Image Converter.                                   *
+# Copyright (c) 2022-2023 NotsoFrostyy                                       *
+#                                                                            *
+# Permission is hereby granted, free of charge, to any person obtaining a    *
+# copy of this software and associated documentation files                   *
+# (the “Software”), to deal in the Software without restriction, including   *
+# without limitation the rights to use, copy, modify, merge, publish,        *
+# distribute, sublicense, and/or sell copies of the Software, and to permit  *
+# persons to whom the Software is furnished to do so, subject to the         *
+# following conditions:                                                      *
+#                                                                            *
+# The above copyright notice and this permission notice shall be included    *
+# in all copies or substantial portions of the Software.                     *
+#                                                                            *
+# THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS    *
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF                 *
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.     *
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY       *
+# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT  *
+# OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR   *
+# THE USE OR OTHER DEALINGS IN THE SOFTWARE.                                 *
+#****************************************************************************#
+
 # Import Modules
 from tkinter import *
 from tkinter import filedialog as fd
@@ -9,7 +33,7 @@ import webbrowser
 root = Tk()
 
 # Application Information
-root.title("Image Converter 1.8")  # name of window
+root.title("Image Converter (Test Builds)")  # name of window
 root.resizable(False, False)  # Cant resize window
 
 frame1 = Frame(heigh=250, width=300, bg='teal')  # bg1
@@ -31,7 +55,6 @@ def openweb():
 
 # start of jpg to png
 
-
 def jpg_to_png():
     global im1
 
@@ -48,11 +71,51 @@ def jpg_to_png():
     else:
        # error
         messagebox.showerror("Error", "Input all Data")
-
 # end of jpg to png
 
-# start of png to jpg
+# start of jfif to png
 
+def jfif_to_png():
+    global im1
+
+    import_filename = fd.askopenfilename(filetypes=[("JFIF File", '.jfif')])
+    if import_filename.endswith(".jfif"):
+
+        im1 = Image.open(import_filename)
+        im1 = im1.convert('RGBA')
+
+        # where to save
+        export_filename = fd.asksaveasfilename(defaultextension=".png")
+        im1.save(export_filename)
+
+        messagebox.showinfo("success ", "your Image converted to Png")
+    else:
+       # error
+        messagebox.showerror("Error", "Input all Data")
+# end of jfif to png
+
+# start of png to jfif
+
+def png_to_jfif():
+    global im1
+
+    import_filename = fd.askopenfilename(filetypes=[("PNG File", '.png')])
+    if import_filename.endswith(".png"):
+
+        im1 = Image.open(import_filename)
+
+        # where to save
+        export_filename = fd.asksaveasfilename(defaultextension=".jpg")
+        im1.save(export_filename)
+        im1 = im1.convert('RGBA')
+
+        messagebox.showinfo("success ", "your Image converted to Jpg")
+    else:
+        # error
+        messagebox.showerror("Error", "Input all Data")
+# end of png to jfif
+
+# start of png to jpg
 
 def png_to_jpg():
     global im1
@@ -74,7 +137,6 @@ def png_to_jpg():
 
 # start of jpg to pdf
 
-
 def Jpg_to_Pdf():
     global im1
     import_filename = fd.askopenfilename(filetypes=[("JPG File", '.jpg')])
@@ -90,6 +152,7 @@ def Jpg_to_Pdf():
         messagebox.showerror("Error", "Input all Data")
 # end of jpg to pdf
 
+# start of png to pdf
 
 def png_to_pdf():
     global im1
@@ -104,8 +167,10 @@ def png_to_pdf():
         messagebox.showinfo("success ", "your Image converted to pdf ")
     else:
         messagebox.showerror("Error", "Input all Data")
+# end of png to pdf
 
-
+#start of png to ico
+        
 def png_to_ico():
     global im1
     import_filename = fd.askopenfilename(filetypes=[("PNG File", '.png')])
@@ -118,7 +183,9 @@ def png_to_ico():
         messagebox.showinfo("success ", "your Image converted to ico ")
     else:
         messagebox.showerror("Error", "Input all Data")
+#end of png to ico
 
+#start of jpg to ico
 
 def jpg_to_ico():
     global im1
@@ -132,6 +199,7 @@ def jpg_to_ico():
         messagebox.showinfo("success ", "your Image converted to ico ")
     else:
         messagebox.showerror("Error", "Input all Data")
+#end of jgg to ico
 
 
 # start of buttons
@@ -165,6 +233,16 @@ button7 = Button(root, text="Png -> Ico", width=9, height=1, bg="purple",
                  fg="white", font=("helvetica", 12, "bold"), command=png_to_ico, relief=GROOVE)
 
 button7.place(x=160, y=120)
+
+button8 = Button(root, text="Jfif -> Png", width=9, height=1, bg="purple",
+                 fg="white", font=("helvetica", 12, "bold"), command=jfif_to_png, relief=GROOVE)
+
+button8.place(x=50, y=160)
+
+button9 = Button(root, text="Png -> Jfif", width=9, height=1, bg="purple",
+                 fg="white", font=("helvetica", 12, "bold"), command=png_to_jfif, relief=GROOVE)
+
+button9.place(x=160, y=160)
 
 # end of button
 
